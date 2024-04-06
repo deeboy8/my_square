@@ -1,3 +1,5 @@
+import sys
+
 def middle(row, column):
     empty_spaces = row - 2
     x = 0
@@ -38,6 +40,12 @@ def my_square(row, column):
             if column > 2:
                 middle(row, column)
             top_and_bottom(row)
-            
-square = my_square(7, 4)
-print(square)
+
+def main():
+    #read in values from cli
+    rows = sys.argv[1]
+    columns = sys.argv[2]
+    square = my_square(int(rows), int(columns))
+
+if __name__ == "__main__":
+    main()
